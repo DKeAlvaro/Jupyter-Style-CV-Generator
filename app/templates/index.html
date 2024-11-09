@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jupyter Style Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>CV - Jupyter Style Generator</h1>
+    
+    <div class="example-link">
+        <a href="https://drive.google.com/file/d/1cM7Zw1CP2zozJzC3_111aPo2i-sGmHmv/view?usp=drive_link" target="_blank" class="example-button">
+            View Example CV
+        </a>
+    </div>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <form method="POST" action="/" id="cvForm">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required 
+                   placeholder="Format: +1-234-567-8900">
+        </div>
+        
+        <div class="form-group">
+            <label for="linkedin">LinkedIn URL:</label>
+            <input type="text" id="linkedin" name="linkedin" required
+                   placeholder="https://www.linkedin.com/in/your-profile">
+        </div>
+        
+        <div id="codeCells" class="code-cells">
+            <h2>Code Cells</h2>
+        </div>
+        
+        <button type="button" onclick="addCodeCell()">Add Code Cell</button>
+        <button type="submit">Generate CV</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
