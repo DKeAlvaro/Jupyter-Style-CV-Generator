@@ -1,0 +1,22 @@
+FROM python:3.9-slim
+
+# Install system dependencies and TeX Live
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    texlive-latex-base \
+    texlive-latex-recommended \
+    texlive-latex-extra && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements and install Python dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Command to run the application
+CMD gunicorn run:app --bind 0.0.0.0:$PORT
