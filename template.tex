@@ -1,0 +1,165 @@
+% Jupyter Style CV template
+% Author: Alvaro Menendez
+
+\documentclass{article}
+\usepackage{graphicx} 
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{mdframed}
+\usepackage{hyperref}
+
+\definecolor{urlcolor}{rgb}{0,.145,.698}
+\definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+\definecolor{citecolor}{rgb}{.12,.54,.11}
+
+\hypersetup{
+  breaklinks=true,
+  colorlinks=true,
+  urlcolor=urlcolor,
+  linkcolor=linkcolor,
+  citecolor=citecolor,
+  }
+
+
+\definecolor{cellBackground}{RGB}{248,248,252}
+\definecolor{pythonGreen}{RGB}{0,128,0}
+\definecolor{pythonRed}{RGB}{184,49,47}
+\definecolor{pythonBlue}{RGB}{0,0,255}
+\definecolor{borderGray}{RGB}{230,230,230}
+
+\lstset{
+    language=Python,
+    frame=none,
+    backgroundcolor=\color{cellBackground},
+    basicstyle=\ttfamily\normalsize,
+    keywordstyle=\color{pythonBlue},
+    commentstyle=\color{pythonGreen},
+    stringstyle=\color{pythonRed},
+    showstringspaces=false,
+    moredelim=[s][\color{purple}]{@}{class},  
+    classoffset=1,
+    keywords={str,float},
+    keywordstyle=\color{pythonGreen},
+    classoffset=0,
+    breaklines=true,
+    breakatwhitespace=false,
+    columns=flexible,
+    keepspaces=true
+}
+
+\geometry{verbose,tmargin=0.5in,bmargin=0.5in,lmargin=0.5in,rmargin=0.5in}
+\pagenumbering{gobble}
+\begin{document}
+\texttt{
+\textbf{Your Name}
+\textbar{}
+\href{mailto:your-email@gmail.com}{your-email@gmail.com} \textbar{} 
+\href{tel:+0123456789}{+0123456789} \textbar{}
+\href{https://linkedin.com/in/your-linkedin}{linkedin.com/your-linkedin}}\\
+
+
+\begin{mdframed}[
+    linewidth=1.6pt,
+    linecolor=borderGray,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innertopmargin=-6pt,
+    innerbottommargin=-6pt,
+]
+\begin{lstlisting}
+ # You can change this text to whatever you want
+
+\end{lstlisting}
+\end{mdframed}
+
+\vspace{-0.75cm}
+
+\begin{mdframed}[
+    linewidth=1.6pt,
+    linecolor=borderGray,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innertopmargin=-6pt,
+    innerbottommargin=-6pt,
+]
+\begin{lstlisting}
+ @dataclass
+ class Education:
+    degree: str
+    institution: str
+    description: str
+
+ education = Education(
+    degree="Your Degree",
+    institution="Your Institution",
+    description="Guess"
+ )
+\end{lstlisting}
+\end{mdframed}
+\vspace{-0.75cm}
+
+\begin{mdframed}[
+    linewidth=1.6pt,
+    linecolor=borderGray,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innertopmargin=-6pt,
+    innerbottommargin=-6pt,
+]
+\begin{lstlisting}
+ experience_df = pd.DataFrame([
+    {
+        "role": "",
+        "company": "",
+        "period": "",
+        "description": ""
+    },
+    {
+        "role": "",
+        "company": "",
+        "period": "",
+        "description": ""
+    },
+    {
+        "role": "",
+        "company": "",
+        "period": "",
+        "description": ""
+    }
+ ])
+\end{lstlisting}
+\end{mdframed}
+
+\vspace{-0.75cm}
+
+\begin{mdframed}[
+    linewidth=1.6pt,
+    linecolor=borderGray,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innertopmargin=-6pt,
+    innerbottommargin=-6pt,
+]
+\begin{lstlisting}
+ projects_json = {
+    "thesis": {
+        "name": "",
+        "tech": ["", "", ""],
+        "description": ""
+ },
+
+\end{lstlisting}
+\end{mdframed}
+
+
+
+\end{document}
